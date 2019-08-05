@@ -1,0 +1,300 @@
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+	<title>Nguyen Thien Phuoc</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+
+
+	<script type="text/javascript" async
+		src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
+		</script>
+	<script type="text/x-mathjax-config">
+		MathJax.Hub.Config({
+		  tex2jax: {
+			inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+			processEscapes: true,
+			
+		  }		  
+		});
+	  </script>
+</head>
+
+<body class="is-preload">
+	<!-- Header -->
+	<header id="header">
+		<div class="inner">
+			<a class="image avatar"><img src="images/logo.jpg" alt="" /></a>
+			<h1><strong>Nguyen Thien Phuoc </strong>
+				<br />
+				Control Engineer <br />
+				University of Science and Technology, <br />
+				Danang, Vietnam </h1>
+			<h1></h1><a href="index.html" class="header_button"><strong>Main Page </strong></a>
+
+			<h1></h1><a href="skills.html" class="header_button"><strong>Research </strong></a>
+
+
+
+
+		</div>
+
+	</header>
+
+	<!-- Main -->
+	<div id="main">
+
+		<!-- One -->
+		<section id="one">
+			<header class="major">
+				<h1>
+					Research
+				</h1>
+			</header>
+			<h3>
+				I grow my own skills around control, programming, mechanical design and embedded systems.
+			</h3>
+			<h3>
+				My graduation thesis is a highlight demonstration for my skills, which involves:
+			</h3>
+			<blockquote>
+				System identification and modeling
+			</blockquote>
+			<blockquote>
+				Nonlinear Model Predictive Control
+			</blockquote>
+
+			<blockquote>
+				Embedded systems
+			</blockquote>
+			<blockquote>
+				Mechanical design
+			</blockquote>
+			<blockquote>
+				Programming
+			</blockquote>
+
+		</section>
+
+		<!-- Two -->
+		<section id="two">
+			<h3 class="collapsible"><strong>Model predictive control</strong></h3>
+			<div class="content">
+
+				<h3>
+					Model Predictive Control (MPC) has been traditionally and successfully employed in the process
+					industry and recently also for hybrid systems.
+					The control action is obtained by minimizing an objective function at each time step over a finite
+					horizon subject to the equations and constraints of the model. .
+				</h3>
+				<h4>
+					\[
+					\begin{align}
+					\displaystyle
+					\min{\quad\quad} &
+					\displaystyle\
+					\int_0^T {l(x(t),u(t))dt}
+					\label{eq:nmpc_obj}\\[1em]
+					\text{s.t.} \quad\quad & x(0) = x_0 \\[0.5em]
+					& \dot x = f(x(t), u(t)) \\[0.5em]
+					& G(x) \leq g, \\[0.5em]
+					& H(u) = h \\[0.5em]
+					\end{align}
+					\]
+				</h4>
+				<h3>
+					where $ x \in {R}^ {n \times n}$, $ u \in {R}^ {m \times m}$ are state and control variables,
+					$ \dot x = f(x(t), u(t)) $ are the state space model of system,
+					$ G(x) \leq g, H(u) = h$ are constrain functions.
+					Normally, a nonlinear least squares optimization is used to calculated the input variables,
+					the optimization problem can be show in dicrete time domains:
+				</h3>
+				<h4>
+					\[
+					\begin{align}
+					\displaystyle
+					\min{\quad\quad} &
+					\displaystyle\
+					||h(x_N)||^2_{2} +
+
+					\displaystyle\sum_{k=0}^{N-1}
+					||Q(h(x_k) - x_k) ||^2_2+
+
+					\displaystyle\sum_{k=0}^{N-1}
+					||R(\Delta u_ ||^2_2 \\[1em]
+					\text{s.t.} \quad\quad &amp; x_{k+1} = F(x_k, u_k), \\[0.5em]
+					& G(x) \leq g, \\[0.5em]
+					& H(u) = h \\[0.5em]
+					\end{align}
+					\]
+
+
+				</h4>
+				<h3>
+					The nonlinear optimization problem can be reduced:
+				</h3>
+				<h4>
+					\[
+					\begin{align}
+					\displaystyle
+					\min{\quad\quad} &
+					\displaystyle\
+					QP = \frac{1}{2} u^TWu+ c^Tu \\[1em]
+					\text{s.t.} \quad\quad &amp G_i(u) \leq g, \\[0.5em]
+					& G_e(u) \leq h \\[0.5em] \\[0.5em]
+					\end{align}
+					\]
+				</h4>
+				<h3>
+					There are many method to slove the constrained nonlinear optimization, also open-source solver
+					such as
+					quadratic programming <a href="https://projects.coin-or.org/qpOASES" target="_blank"> (qpOASES),
+					</a>
+					<a href="https://cvxgen.com/docs/index.html" target="_blank"> CVXGEN, </a>
+
+					<a href="https://en.wikipedia.org/wiki/Sequential_quadratic_programming" target="_blank">sequantial
+						quadratic programming, </a>
+					In this project, SQP has been used to solve the problem.
+
+				</h3>
+			</div>
+
+
+
+		</section>
+
+		<!-- Three -->
+		<section id="three">
+			<h3 class="collapsible"><strong>Dynamics and controls</strong></h3>
+			<div class="content">
+				<h4>
+					After solving the optimization problems, apply the input $ u $ to the systems
+					as the volocity and joint angles of the motors.
+					Inverse kinematics is the mathematical process of recovering the movements of an plate into the
+					movements of three motor.
+					These images illustrate the systems design by solidworks and world coordinate of systems:
+				</h4>
+				<div class="row ">
+
+					<article class="col-6 aln-right ">
+						<h2 class="image fit "><img src="images/thumbs/solidworks.png" /></h2>
+
+					</article>
+					<article class="col-6 aln-left ">
+						<h2 class="image fit "><img src="images/thumbs/inver_kit.jpg" /></h2>
+
+					</article>
+				</div>
+				<h4>
+					Considering the center of plate is fixed,
+					the position of $P_1, P_2, P_3 $ is calculated using rotation matrix, and then the rotation angles
+					of motors.
+				</h4>
+			</div>
+
+		</section>
+		<section id="four">
+			<h3 class="collapsible"><strong>Hardware and software</strong></h3>
+			<div class="content">
+				<h4>
+					The ball and plate system requires not only high performance real-time controller,
+					but also an effective embedded platform to implement the controller.
+					The following diagram shows the system elements clearly:
+				</h4>
+				<div class="row aln-center">
+
+					<article class="col-12 ">
+						<h2 class="image fit "><img src="images/thumbs/systems.png" /></h2>
+
+					</article>
+
+				</div>
+				<h4>
+					A web camera is used to capture the image of the ball in the plate,
+					then the application calculate the position of the ball and sends it to the MPC controller,
+					the result of MPC which includes the velocity and rotation angle will be send to STM32h7 board to
+					drive the motor.
+					In order to control motors speed and angle smoothly and simultaneously without interrupt,
+					PI controller and slave-master timers are used.
+				</h4>
+				<h4>
+					Further information and source could be seen at
+					<a href="https://github.com/poloko159/Model-predictive-control-of-Ball-and-plate-system"
+						target="_blank">Github</a>
+					.</h4>
+			</div>
+
+		</section>
+		<section id="five">
+			<h3 class="collapsible"><strong>Result and video</strong></h3>
+			<div class="content">
+				<h4>
+					The real model, video and result:
+				</h4>
+				<div class="row ">
+
+					<article class="col-12 aln-center ">
+						<h2 class="image fit "><img src="images/thumbs/real_model.jpg" /></h2>
+
+					</article>
+				</div>
+				<div class="row">
+					<article class="col-6 aln-left ">
+						<h2 class="image fit "><img src="images/thumbs/gui.png" /></h2>
+
+					</article>
+					<article class="col-6 aln-right ">
+						<h2 class="image fit "><img src="images/thumbs/3dmatlab.png" /></h2>
+
+					</article>
+				</div>
+				<div class="row aln-center">
+					<iframe width="475" height="267" src="https://www.youtube.com/embed/fuhWEWtDuGo" frameborder="0"
+						allow="gia tốc kế; autoplay; mã hóa-phương tiện; con quay hồi chuyển; -picture "
+						allowfullscreen> </iframe>
+				</div>
+				<div class="row aln-center">
+					<h1>
+
+					</h1>
+				</div>
+				<div class="row aln-center">
+					<iframe width="475" height="267" src="https://www.youtube.com/embed/cwIC283lVaM" frameborder="0"
+						allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+						allowfullscreen></iframe>
+				</div>
+			</div>
+
+		</section>
+
+	</div>
+
+	<!-- Footer -->
+	<footer id="footer">
+		<div class="inner">
+			<ul class="icons">
+				<li><a href="https://github.com/poloko159" class="icon brands fa-github"><span
+							class="label">Github</span></a></li>
+				<li><a href="mailto:thienphuoc996@gmail.com" class="icon solid fa-envelope"><span
+							class="label">Email</span></a></li>
+			</ul>
+			<ul class="copyright">
+				<li> Generated by Nguyen Thien Phuoc</li>
+			</ul>
+		</div>
+	</footer>
+
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.poptrox.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+
+</body>
+
+</html>

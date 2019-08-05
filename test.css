@@ -1,0 +1,367 @@
+/* Button
+
+input[type="submit"],
+input[type="reset"],
+input[type="button"],
+.header_button {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+    -moz-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+    -webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+    -ms-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+    background-color: transparent;
+    border-radius: 0.35em;
+    border: solid 3px #efefef;
+    color: #787878 !important;
+    cursor: pointer;
+    display: inline-block;
+    font-weight: 400;
+    height: 3.15em;
+    height: calc(2.75em + 6px);
+    line-height: 2.75em;
+    min-width: 21.75em;
+    padding: 0 1.5em;
+    text-align: center;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+    input[type="submit"]:hover,
+    input[type="reset"]:hover,
+    input[type="button"]:hover,
+    .header_button:hover {
+        border-color: #49bf9d;
+        color: #49bf9d !important;
+    }
+
+    input[type="submit"]:active,
+    input[type="reset"]:active,
+    input[type="button"]:active,
+    .header_button:active {
+        background-color: rgba(73, 191, 157, 0.1);
+        border-color: #49bf9d;
+        color: #49bf9d !important;
+    }
+
+    input[type="submit"].icon,
+    input[type="reset"].icon,
+    input[type="button"].icon,
+    .header_button.icon {
+        padding-left: 1.35em;
+    }
+
+        input[type="submit"].icon:before,
+        input[type="reset"].icon:before,
+        input[type="button"].icon:before,
+        .header_button.icon:before {
+            margin-right: 0.5em;
+        }
+
+    input[type="submit"].fit,
+    input[type="reset"].fit,
+    input[type="button"].fit,
+    .header_button.fit {
+        min-width: 0;
+        width: 100%;
+    }
+
+    input[type="submit"].small,
+    input[type="reset"].small,
+    input[type="button"].small,
+    .header_button.small {
+        font-size: 0.8em;
+    }
+
+    input[type="submit"].large,
+    input[type="reset"].large,
+    input[type="button"].large,
+    .header_button.large {
+        font-size: 1.35em;
+    }
+
+    input[type="submit"].primary,
+    input[type="reset"].primary,
+    input[type="button"].primary,
+    .header_button.primary {
+        background-color: #49bf9d;
+        border-color: #49bf9d;
+        color: #ffffff !important;
+    }
+
+        input[type="submit"].primary:hover,
+        input[type="reset"].primary:hover,
+        input[type="button"].primary:hover,
+        .header_button.primary:hover {
+            background-color: #5cc6a7;
+            border-color: #5cc6a7;
+        }
+
+        input[type="submit"].primary:active,
+        input[type="reset"].primary:active,
+        input[type="button"].primary:active,
+        .header_button.primary:active {
+            background-color: #3eb08f;
+            border-color: #3eb08f;
+        }
+
+    input[type="submit"].disabled, input[type="submit"]:disabled,
+    input[type="reset"].disabled,
+    input[type="reset"]:disabled,
+    input[type="button"].disabled,
+    input[type="button"]:disabled,
+    .header_button.disabled,
+    .header_button:disabled {
+        background-color: #e7e7e7 !important;
+        border-color: #e7e7e7 !important;
+        color: #b2b2b2 !important;
+        cursor: default;
+    }
+ */
+
+/* .container_transitions expand Transitions */
+
+/*
+
+.container_transitions  {
+  
+  .section {
+    overflow:hidden;
+    transition:height 0.3s ease-out;
+    height:auto;
+  }
+}
+
+
+* {
+  box-sizing:border-box;
+}
+body {
+  margin:0;
+  padding:10vh 10vw;
+  font-family:arial;
+}
+p {
+  margin:10px;
+}
+.container_transitions {
+  border: 3px solid #FFEB3B;
+  margin:0 auto;
+  max-width:300px;
+  border-radius:3px;
+  
+  .section {
+    border:3px solid #4CAF50;
+  }
+}
+button {
+  display:block;
+  --webkit-appearance:none;
+  font-size:18px;
+  border:none;
+  border-radius:3px;
+  background:#2196F3;
+  color:white;
+  margin:15px auto;
+  padding:15px;
+  cursor:pointer;
+  
+  transition:box-shadow 0.2s ease-out;
+  
+  &:hover {
+    box-shadow:0px 0px 15px lightgrey;
+  }
+  &:active {
+    box-shadow:0px 0px 10px lightgrey;
+  }
+  &:focus {
+    outline:none;
+  }
+}
+
+*/
+
+ /* Container needed to position the overlay. Adjust the width as needed */
+ .container_tran {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+}
+
+/* Make the image_tran to responsive */
+.image_tran {
+    border-radius: 0.35em;
+		border: 0;
+		display: inline-block;
+		position: relative;
+}
+.image_tran:before {
+  -moz-transition: opacity 0.2s ease-in-out;
+  -webkit-transition: opacity 0.2s ease-in-out;
+  -ms-transition: opacity 0.2s ease-in-out;
+  transition: opacity 0.2s ease-in-out;
+  background: url("images/overlay.png");
+  border-radius: 0.35em;
+  content: '';
+  display: block;
+  height: 100%;
+  left: 0;
+  opacity: 0.5;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.image_tran.thumb_tran {
+  text-align: center;
+}
+
+  .image_tran.thumb_tran:after {
+    -moz-transition: opacity 0.2s ease-in-out;
+    -webkit-transition: opacity 0.2s ease-in-out;
+    -ms-transition: opacity 0.2s ease-in-out;
+    transition: opacity 0.2s ease-in-out;
+    border-radius: 0.35em;
+    border: solid 3px rgba(255, 255, 255, 0.5);
+    color: #fff;
+    display: inline-block;
+    font-size: 0.8em;
+    font-weight: 400;
+    left: 50%;
+    line-height: 2.25em;
+    margin: -1.25em 0 0 -3em;
+    opacity: 0;
+    padding: 0 1.5em;
+    position: absolute;
+    text-align: center;
+    text-decoration: none;
+    top: 50%;
+    white-space: nowrap;
+  }
+
+  .image_tran.thumb_tran:hover:after {
+    opacity: 1.0;
+  }
+
+  .image_tran.thumb_tran:hover:before {
+    background: url("images/overlay.png"), url("images/overlay.png");
+    opacity: 1.0;
+  }
+
+.image_tran img {
+  border-radius: 0.35em;
+  display: block;
+  
+}
+
+.image_tran.left {
+  float: left;
+  margin: 0 1.5em 1em 0;
+  top: 0.25em;
+}
+
+.image_tran.right {
+  float: right;
+  margin: 0 0 1em 1.5em;
+  top: 0.25em;
+}
+
+.image_tran.left, .image_tran.right {
+  max-width: 40%;
+}
+
+  .image_tran.left img, .image_tran.right img {
+    width: 100%;
+  }
+
+.image_tran.fit_tran {
+  display: block;
+  margin: 0 0 2em 0;
+  width: 100%;
+}
+
+  .image_tran.fit_tran img {
+    width: 100%;
+  }
+
+.image_tran.avatar {
+  border-radius: 100%;
+}
+
+  .image_tran.avatar:before {
+    display: none;
+  }
+
+  .image_tran.avatar img {
+    border-radius: 100%;
+    width: 100%;
+  }
+
+
+/* The overlay effect (full height and width) - lays on top of the container and over the image_tran */
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .3s ease;
+  background-color: red;
+}
+
+/* When you mouse over the container, fade in the overlay icon*/
+.container_tran:hover .overlay {
+  opacity: 1;
+}
+
+/* The icon inside the overlay is positioned in the middle vertically and horizontally */
+.icon_tran {
+  color: white;
+  font-size: 100px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+/* When you move the mouse over the icon, change color */
+.fa-user:hover {
+  color: #eee;
+} 
+
+/*  ssssssssssssssssssssss           */ 
+ /* Style the button that is used to open and close the collapsible content */
+ .collapsible {
+  background-color: #777;
+  color: white;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active, .collapsible:hover {
+  background-color: #555;
+}
+
+/* Style the collapsible content. Note: hidden by default */
+.content_tran {
+  
+  padding: 0 18px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  background-color: #f1f1f1;
+  
+} 
